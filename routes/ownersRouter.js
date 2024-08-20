@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/",(req,res)=>{
-    res.send("hey owner");  
+router.get("/admin", (req, res) => {
+    let success = req.flash("success");
+    res.render("createproducts", { success });
 });
 
 module.exports = router;
